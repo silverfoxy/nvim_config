@@ -176,7 +176,7 @@ return {
       },
     },
   },
-
+  {},
   -- or you can return new options to override all the defaults
   {
     "nvim-lualine/lualine.nvim",
@@ -258,6 +258,13 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+      })
+
+      cmp.setup.filetype({ "sql" }, {
+        sources = {
+          { name = "vim-dadbod-completion" },
+          { name = "buffer" },
+        },
       })
     end,
   },
